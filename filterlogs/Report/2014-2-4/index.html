@@ -1,0 +1,958 @@
+ <!DOCTYPE html>
+		<html>
+		<head>
+		<title>Homepage</title>
+		<link rel="stylesheet" type="text/css" href="../../css/combined.css" />
+		<script src="../../js/combined.js"></script>
+		<script src="../../js/paging.js"></script>
+		</head>
+		<body>
+	    <div class="header">
+		<div class="navigation-bar dark">
+	    <div class="navigation-bar-content container">
+			  <a class="element" href="../../index.html">
+				  <img class="nav-img" src="../../images/left-icon.png"/>
+				  </a>
+			        <span class="element-divider"></span>
+		 <a href="index.html" class="element">HOMEPAGE</a>
+	        <ul class="element-menu">
+		
+				<li>
+	                <a class="element" href="mime.html">Mime</a>
+	            </li>
+	            <li>
+	                 <a class="element" href="profiles.html">Profiles Applied</a>
+	            </li>
+	           
+	            <li>
+	                 <a class="element" href="filters.html">Filters </a>
+	            </li>
+	          <li>
+	                <a class="element" href="topsite.html">Top Website</a>
+
+	            </li>
+				<li>
+	                <a class="element" href="topuser.html">Top User</a>
+
+	            </li>
+	            <li>
+	                 <a class="element" href="blacklist.html">Security breached</a>
+	            </li>
+	          
+			   <ul class="element-menu place-right">
+	            <li>
+				<div class="dropdown12">
+	                <a class="element" href="#" >View Report By</a>
+	                <div class="hide">
+					<ul class="dropdown-menu  place-right light dropdown" style="height: 292px; width: 422px; display: block;">
+	                    <li> 
+						<iframe src="../../Calender/calender.html" width="420px" height="290px" frameborder="0"> </iframe>
+						</li>
+					</ul>
+					</div>
+					</div>
+				</li>
+				<span class="element-divider"></span>
+				<li>
+				 <a class="element" href="../../settings.html">
+				<img class="nav-img1" src="../../images/settings_icon.png"/> </a>
+				</li>
+				
+			</ul>
+			
+			</ul>
+				
+			</div>
+						
+	    </div>
+	</div>
+
+	<div class="main"><div class="tab-container">
+	        <br> <br>  
+		<style>
+		.example19:before {
+		content:"Top 10 Websites";
+		margin: 50px -10px;
+		}
+		</style>
+		<div class="example19">
+		<div class="message"><table class="box-table-a" style="width: 35%;"  border=2 id='rounded-corner'>
+	                        <tr><th>Legend</th><th>Website</th><th>Hits</th></tr><tr><td><span class="color_code" style="border-color:#5D8AA8; border-style: solid;"></span></td><td><a href=http://www.convertfiles.com:80 target="_blank">http://www.convertfiles.com:80</a></td><td class='mintd'>1</td></tr></table></div>
+	<style> 
+
+.wrapper1, .wrapper2, .wrapper3, .wrapper4, .wrapper5, .wrapper6, .wrapper7, .wrapper8
+{
+	width:461px;
+	height:380px;
+	background-color:#b9c9fe;
+	box-shadow: 10px 10px 5px #888888;
+	margin-left: 40%;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.legend_chart {
+    width: 19em;
+    display: block;
+    border: 1px solid black;
+	position: relative;
+	right: -140px;
+	color: black;
+	overflow: hidden;
+}
+
+.legend_chart .title_chart {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0em 0em 0em 1em;
+	padding: 0 1.3em;
+	height: 0.9em;
+    font-size:89%;
+	overflow: hidden;
+}
+.buttons_chart {
+	margin-left: -10px;
+	margin-top: 126px;
+	position:relative;
+	top:-60px;
+}
+</style>
+<script src="../../js/Chart.js"></script>
+
+
+</head>
+<body onload="pie1();pie2();pie3();pie4();pie5();pie6();">
+
+<div class="wrapper6">
+	
+	<canvas id="myChart6"  style="width: 400px; height: 400px;margin-top:25px;margin-left: 45px;"></canvas>
+	<div id="Legend6"></div>
+	<div class="buttons_chart" id="buttons6">
+		<button onclick="pie6()"><img src="../../images/chart.png" height="25px" width="25px"/></button>
+    	<button onclick="bar6()"><img src="../../images/chart_bar.png" height="25px" width="25px"/></button>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	var ctx6 = document.getElementById("myChart6").getContext("2d");
+	
+	var sites6 =['http://www.convertfiles.com:80']; 
+	var hits6 = [1];
+	var color6 = ['#5D8AA8','#E32636','#FFBF00','#8DB600','#FBCEB1','#7FFFD4','#98777B','#DE5D83','#FFEF00','#36454F'];
+
+	
+
+	function pie6() {
+		
+		var x= document.getElementById("myChart6");
+		x.setAttribute("width",320);
+		x.setAttribute("height",320);
+
+		document.getElementById('myChart6').style.marginLeft = '60px';
+		document.getElementById('buttons6').style.marginLeft = '474px';
+		document.getElementById('buttons6').style.marginTop = '20px';
+		
+
+		var data = [];
+        for (i = 0; i < 1; i++) {
+            var obj = {
+                label: sites6[i],
+                value : hits6[i],
+                color: color6[i],
+                title: sites6[i]
+            };
+            data.push(obj);
+        }
+
+		defaults = {
+			animation : false
+		}
+		var myNewChart6 = new Chart(ctx6).Pie(data,defaults);
+		
+		document.getElementById("Legend6").innerHTML = "";
+	    
+
+	}
+	
+ 	function bar6(){
+		var x= document.getElementById("myChart6");
+		x.setAttribute("width",650);
+		x.setAttribute("height",600);
+		
+		document.getElementById('myChart6').style.marginLeft = '-114px';
+		document.getElementById('buttons6').style.marginLeft = '474px';
+		document.getElementById('buttons6').style.marginTop = '-258px';
+		
+		
+
+        var data = {
+            labels : [],
+            datasets : [
+            {
+                fillColor : [],
+                strokeColor : ["black"],
+                data : [],
+                title: []
+            }
+            ]
+        }
+
+        
+        for (i = 0; i < 1; i++) {
+            data.labels[i]=sites6[i];
+            data.datasets[0].data[i]=hits6[i];
+            data.datasets[0].fillColor[i]=color6[i];
+            data.datasets[0].title[i]=sites6[i];
+        }    
+
+        defaults = {
+			animation : false
+		} 
+        
+
+        var myNewChart = new Chart(ctx6).Bar(data,defaults);
+	}
+</script>
+	</div></div><br><div class="tab-container">
+	        <br> <br>  
+		<style>
+		.example20:before {
+		content:"Top 10 Users";
+		margin: 40px 0px;
+		}
+		</style>
+		<div class="example20">
+		<div class="message"><table class="box-table-a" style="width: 35%;"  border=2 id='rounded-corner'>
+	                        <tr><th>Legend</th><th>User</th><th>Hits</th></tr><tr><td><span class="color_code" style="border-color:#5D8AA8; border-style: solid;"></span></td><td><a href=../../Report/2014-2-4/pda@192.168.50.253/pda@192.168.50.253.html>pda@192.168.50.253</a></td><td class='mintd'>1</td></tr></table></div>
+	<style> 
+
+.wrapper1, .wrapper2, .wrapper3, .wrapper4, .wrapper5, .wrapper6, .wrapper7, .wrapper8
+{
+	width:461px;
+	height:380px;
+	background-color:#b9c9fe;
+	box-shadow: 10px 10px 5px #888888;
+	margin-left: 40%;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.legend_chart {
+    width: 19em;
+    display: block;
+    border: 1px solid black;
+	position: relative;
+	right: -140px;
+	color: black;
+	overflow: hidden;
+}
+
+.legend_chart .title_chart {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0em 0em 0em 1em;
+	padding: 0 1.3em;
+	height: 0.9em;
+    font-size:89%;
+	overflow: hidden;
+}
+.buttons_chart {
+	margin-left: -10px;
+	margin-top: 126px;
+	position:relative;
+	top:-60px;
+}
+</style>
+<script src="../../js/Chart.js"></script>
+
+
+</head>
+<body onload="pie1();pie2();pie3();pie4();pie5();pie6();">
+
+<div class="wrapper1">
+	
+	<canvas id="myChart1"  style="width: 400px; height: 400px;margin-top:25px;margin-left: 45px;"></canvas>
+	<div id="Legend1"></div>
+	<div class="buttons_chart" id="buttons1">
+		<button onclick="pie1()"><img src="../../images/chart.png" height="25px" width="25px"/></button>
+    	<button onclick="bar1()"><img src="../../images/chart_bar.png" height="25px" width="25px"/></button>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	var ctx1 = document.getElementById("myChart1").getContext("2d");
+	
+	var sites1 =['pda@192.168.50.253']; 
+	var hits1 = [1];
+	var color1 = ['#5D8AA8','#E32636','#FFBF00','#8DB600','#FBCEB1','#7FFFD4','#98777B','#DE5D83','#FFEF00','#36454F'];
+
+	
+
+	function pie1() {
+		
+		var x= document.getElementById("myChart1");
+		x.setAttribute("width",320);
+		x.setAttribute("height",320);
+
+		document.getElementById('myChart1').style.marginLeft = '60px';
+		document.getElementById('buttons1').style.marginLeft = '474px';
+		document.getElementById('buttons1').style.marginTop = '20px';
+		
+
+		var data = [];
+        for (i = 0; i < 1; i++) {
+            var obj = {
+                label: sites1[i],
+                value : hits1[i],
+                color: color1[i],
+                title: sites1[i]
+            };
+            data.push(obj);
+        }
+
+		defaults = {
+			animation : false
+		}
+		var myNewChart1 = new Chart(ctx1).Pie(data,defaults);
+		
+		document.getElementById("Legend1").innerHTML = "";
+	    
+
+	}
+	
+ 	function bar1(){
+		var x= document.getElementById("myChart1");
+		x.setAttribute("width",550);
+		x.setAttribute("height",525);
+		
+		document.getElementById('myChart1').style.marginLeft = '-80px';
+		document.getElementById('buttons1').style.marginLeft = '474px';
+		document.getElementById('buttons1').style.marginTop = '-187px';
+		
+		
+
+        var data = {
+            labels : [],
+            datasets : [
+            {
+                fillColor : [],
+                strokeColor : ["black"],
+                data : [],
+                title: []
+            }
+            ]
+        }
+
+        
+        for (i = 0; i < 1; i++) {
+            data.labels[i]=sites1[i];
+            data.datasets[0].data[i]=hits1[i];
+            data.datasets[0].fillColor[i]=color1[i];
+            data.datasets[0].title[i]=sites1[i];
+        }    
+
+        defaults = {
+			animation : false
+		} 
+        
+
+        var myNewChart = new Chart(ctx1).Bar(data,defaults);
+	}
+</script>
+	</div></div><br><br><div class="tab-container">
+	        <br> <br>  
+		<style>
+		.example21:before {
+		content:"Top 10 Mime";
+		margin: 40px 0px;
+		}
+		</style>
+		<div class="example21">
+		<div class="message"><table class="box-table-a" style="width: 35%;"  border=2 id='rounded-corner'>
+	                        <tr><th>Legend</th><th>Mime</th><th>Hits</th></tr><tr><td><span class="color_code" style="border-color:#5D8AA8; border-style: solid;"></span></td><td>text/css</td><td class='mintd'>1</td></tr></table></div>
+	<style> 
+
+.wrapper1, .wrapper2, .wrapper3, .wrapper4, .wrapper5, .wrapper6, .wrapper7, .wrapper8
+{
+	width:461px;
+	height:380px;
+	background-color:#b9c9fe;
+	box-shadow: 10px 10px 5px #888888;
+	margin-left: 40%;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.legend_chart {
+    width: 19em;
+    display: block;
+    border: 1px solid black;
+	position: relative;
+	right: -140px;
+	color: black;
+	overflow: hidden;
+}
+
+.legend_chart .title_chart {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0em 0em 0em 1em;
+	padding: 0 1.3em;
+	height: 0.9em;
+    font-size:89%;
+	overflow: hidden;
+}
+.buttons_chart {
+	margin-left: -10px;
+	margin-top: 126px;
+	position:relative;
+	top:-60px;
+}
+</style>
+<script src="../../js/Chart.js"></script>
+
+
+</head>
+<body onload="pie1();pie2();pie3();pie4();pie5();pie6();">
+
+<div class="wrapper2">
+	
+	<canvas id="myChart2"  style="width: 400px; height: 400px;margin-top:25px;margin-left: 45px;"></canvas>
+	<div id="Legend2"></div>
+	<div class="buttons_chart" id="buttons2">
+		<button onclick="pie2()"><img src="../../images/chart.png" height="25px" width="25px"/></button>
+    	<button onclick="bar2()"><img src="../../images/chart_bar.png" height="25px" width="25px"/></button>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	var ctx2 = document.getElementById("myChart2").getContext("2d");
+	
+	var sites2 =['text/css']; 
+	var hits2 = [1];
+	var color2 = ['#5D8AA8','#E32636','#FFBF00','#8DB600','#FBCEB1','#7FFFD4','#98777B','#DE5D83','#FFEF00','#36454F'];
+
+	
+
+	function pie2() {
+		
+		var x= document.getElementById("myChart2");
+		x.setAttribute("width",320);
+		x.setAttribute("height",320);
+
+		document.getElementById('myChart2').style.marginLeft = '60px';
+		document.getElementById('buttons2').style.marginLeft = '474px';
+		document.getElementById('buttons2').style.marginTop = '20px';
+		
+
+		var data = [];
+        for (i = 0; i < 1; i++) {
+            var obj = {
+                label: sites2[i],
+                value : hits2[i],
+                color: color2[i],
+                title: sites2[i]
+            };
+            data.push(obj);
+        }
+
+		defaults = {
+			animation : false
+		}
+		var myNewChart2 = new Chart(ctx2).Pie(data,defaults);
+		
+		document.getElementById("Legend2").innerHTML = "";
+	    
+
+	}
+	
+ 	function bar2(){
+		var x= document.getElementById("myChart2");
+		x.setAttribute("width",500);
+		x.setAttribute("height",475);
+		
+		document.getElementById('myChart2').style.marginLeft = '-50px';
+		document.getElementById('buttons2').style.marginLeft = '474px';
+		document.getElementById('buttons2').style.marginTop = '-135px';
+		
+		
+
+        var data = {
+            labels : [],
+            datasets : [
+            {
+                fillColor : [],
+                strokeColor : ["black"],
+                data : [],
+                title: []
+            }
+            ]
+        }
+
+        
+        for (i = 0; i < 1; i++) {
+            data.labels[i]=sites2[i];
+            data.datasets[0].data[i]=hits2[i];
+            data.datasets[0].fillColor[i]=color2[i];
+            data.datasets[0].title[i]=sites2[i];
+        }    
+
+        defaults = {
+			animation : false
+		} 
+        
+
+        var myNewChart = new Chart(ctx2).Bar(data,defaults);
+	}
+</script>
+	</div></div><br><br><div class="tab-container">
+	        <br> <br>  
+		<style>
+		.example22:before {
+		content:"Top 10 Profiles";
+		margin: 40px 0px;
+		}
+		</style>
+		<div class="example22">
+		<div class="message"><table class="box-table-a" style="width: 35%;"  border=2 id='rounded-corner'>
+	                        <tr><th>Legend</th><th>Profiles</th><th>Hits</th></tr><tr><td><span class="color_code" style="border-color:#5D8AA8; border-style: solid;"></span></td><td>virus_scan</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#E32636; border-style: solid;"></span></td><td>text-filter</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#FFBF00; border-style: solid;"></span></td><td>staff-pharma</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#8DB600; border-style: solid;"></span></td><td>staff-limit</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#FBCEB1; border-style: solid;"></span></td><td>http</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#7FFFD4; border-style: solid;"></span></td><td>cachable</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#98777B; border-style: solid;"></span></td><td>block_finance</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#DE5D83; border-style: solid;"></span></td><td>antivirus</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#FFEF00; border-style: solid;"></span></td><td>allowed-https</td><td class='mintd'>1</td></tr><tr><td><span class="color_code" style="border-color:#36454F; border-style: solid;"></span></td><td>Mozilla_Firefox</td><td class='mintd'>1</td></tr></table></div>
+	<style> 
+
+.wrapper1, .wrapper2, .wrapper3, .wrapper4, .wrapper5, .wrapper6, .wrapper7, .wrapper8
+{
+	width:461px;
+	height:380px;
+	background-color:#b9c9fe;
+	box-shadow: 10px 10px 5px #888888;
+	margin-left: 40%;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.legend_chart {
+    width: 19em;
+    display: block;
+    border: 1px solid black;
+	position: relative;
+	right: -140px;
+	color: black;
+	overflow: hidden;
+}
+
+.legend_chart .title_chart {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0em 0em 0em 1em;
+	padding: 0 1.3em;
+	height: 0.9em;
+    font-size:89%;
+	overflow: hidden;
+}
+.buttons_chart {
+	margin-left: -10px;
+	margin-top: 126px;
+	position:relative;
+	top:-60px;
+}
+</style>
+<script src="../../js/Chart.js"></script>
+
+
+</head>
+<body onload="pie1();pie2();pie3();pie4();pie5();pie6();">
+
+<div class="wrapper4">
+	
+	<canvas id="myChart4"  style="width: 400px; height: 400px;margin-top:25px;margin-left: 45px;"></canvas>
+	<div id="Legend4"></div>
+	<div class="buttons_chart" id="buttons4">
+		<button onclick="pie4()"><img src="../../images/chart.png" height="25px" width="25px"/></button>
+    	<button onclick="bar4()"><img src="../../images/chart_bar.png" height="25px" width="25px"/></button>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	var ctx4 = document.getElementById("myChart4").getContext("2d");
+	
+	var sites4 =['virus_scan', 'text-filter', 'staff-pharma', 'staff-limit', 'http', 'cachable', 'block_finance', 'antivirus', 'allowed-https', 'Mozilla_Firefox']; 
+	var hits4 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+	var color4 = ['#5D8AA8','#E32636','#FFBF00','#8DB600','#FBCEB1','#7FFFD4','#98777B','#DE5D83','#FFEF00','#36454F'];
+
+	
+
+	function pie4() {
+		
+		var x= document.getElementById("myChart4");
+		x.setAttribute("width",320);
+		x.setAttribute("height",320);
+
+		document.getElementById('myChart4').style.marginLeft = '60px';
+		document.getElementById('buttons4').style.marginLeft = '474px';
+		document.getElementById('buttons4').style.marginTop = '20px';
+		
+
+		var data = [];
+        for (i = 0; i < 10; i++) {
+            var obj = {
+                label: sites4[i],
+                value : hits4[i],
+                color: color4[i],
+                title: sites4[i]
+            };
+            data.push(obj);
+        }
+
+		defaults = {
+			animation : false
+		}
+		var myNewChart4 = new Chart(ctx4).Pie(data,defaults);
+		
+		document.getElementById("Legend4").innerHTML = "";
+	    
+
+	}
+	
+ 	function bar4(){
+		var x= document.getElementById("myChart4");
+		x.setAttribute("width",525);
+		x.setAttribute("height",450);
+		
+		document.getElementById('myChart4').style.marginLeft = '-54px';
+		document.getElementById('buttons4').style.marginLeft = '474px';
+		document.getElementById('buttons4').style.marginTop = '-111px';
+		
+		
+
+        var data = {
+            labels : [],
+            datasets : [
+            {
+                fillColor : [],
+                strokeColor : ["black"],
+                data : [],
+                title: []
+            }
+            ]
+        }
+
+        
+        for (i = 0; i < 10; i++) {
+            data.labels[i]=sites4[i];
+            data.datasets[0].data[i]=hits4[i];
+            data.datasets[0].fillColor[i]=color4[i];
+            data.datasets[0].title[i]=sites4[i];
+        }    
+
+        defaults = {
+			animation : false
+		} 
+        
+
+        var myNewChart = new Chart(ctx4).Bar(data,defaults);
+	}
+</script>
+	</div></div><br><br><div class="tab-container">
+	        <br> <br>  
+		<style>
+		.example23:before {
+		content:"Top 10 Filters";
+		margin: 40px 0px;
+		}
+		</style>
+		<div class="example23">
+		<div class="message"><table class="box-table-a" style="width: 35%;"  border=2 id='rounded-corner'>
+	                        <tr><th>Legend</th><th>Filters</th><th>Hits</th></tr><tr><td><span class="color_code" style="border-color:#5D8AA8; border-style: solid;"></span></td><td>test1</td><td class='mintd'>1</td></tr></table></div>
+	<style> 
+
+.wrapper1, .wrapper2, .wrapper3, .wrapper4, .wrapper5, .wrapper6, .wrapper7, .wrapper8
+{
+	width:461px;
+	height:380px;
+	background-color:#b9c9fe;
+	box-shadow: 10px 10px 5px #888888;
+	margin-left: 40%;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.legend_chart {
+    width: 19em;
+    display: block;
+    border: 1px solid black;
+	position: relative;
+	right: -140px;
+	color: black;
+	overflow: hidden;
+}
+
+.legend_chart .title_chart {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0em 0em 0em 1em;
+	padding: 0 1.3em;
+	height: 0.9em;
+    font-size:89%;
+	overflow: hidden;
+}
+.buttons_chart {
+	margin-left: -10px;
+	margin-top: 126px;
+	position:relative;
+	top:-60px;
+}
+</style>
+<script src="../../js/Chart.js"></script>
+
+
+</head>
+<body onload="pie1();pie2();pie3();pie4();pie5();pie6();">
+
+<div class="wrapper5">
+	
+	<canvas id="myChart5"  style="width: 400px; height: 400px;margin-top:25px;margin-left: 45px;"></canvas>
+	<div id="Legend5"></div>
+	<div class="buttons_chart" id="buttons5">
+		<button onclick="pie5()"><img src="../../images/chart.png" height="25px" width="25px"/></button>
+    	<button onclick="bar5()"><img src="../../images/chart_bar.png" height="25px" width="25px"/></button>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	var ctx5 = document.getElementById("myChart5").getContext("2d");
+	
+	var sites5 =['test1']; 
+	var hits5 = [1];
+	var color5 = ['#5D8AA8','#E32636','#FFBF00','#8DB600','#FBCEB1','#7FFFD4','#98777B','#DE5D83','#FFEF00','#36454F'];
+
+	
+
+	function pie5() {
+		
+		var x= document.getElementById("myChart5");
+		x.setAttribute("width",320);
+		x.setAttribute("height",320);
+
+		document.getElementById('myChart5').style.marginLeft = '60px';
+		document.getElementById('buttons5').style.marginLeft = '474px';
+		document.getElementById('buttons5').style.marginTop = '20px';
+		
+
+		var data = [];
+        for (i = 0; i < 1; i++) {
+            var obj = {
+                label: sites5[i],
+                value : hits5[i],
+                color: color5[i],
+                title: sites5[i]
+            };
+            data.push(obj);
+        }
+
+		defaults = {
+			animation : false
+		}
+		var myNewChart5 = new Chart(ctx5).Pie(data,defaults);
+		
+		document.getElementById("Legend5").innerHTML = "";
+	    
+
+	}
+	
+ 	function bar5(){
+		var x= document.getElementById("myChart5");
+		x.setAttribute("width",475);
+		x.setAttribute("height",550);
+		
+		document.getElementById('myChart5').style.marginLeft = '-100px';
+		document.getElementById('buttons5').style.marginLeft = '474px';
+		document.getElementById('buttons5').style.marginTop = '-211px';
+		
+		
+
+        var data = {
+            labels : [],
+            datasets : [
+            {
+                fillColor : [],
+                strokeColor : ["black"],
+                data : [],
+                title: []
+            }
+            ]
+        }
+
+        
+        for (i = 0; i < 1; i++) {
+            data.labels[i]=sites5[i];
+            data.datasets[0].data[i]=hits5[i];
+            data.datasets[0].fillColor[i]=color5[i];
+            data.datasets[0].title[i]=sites5[i];
+        }    
+
+        defaults = {
+			animation : false
+		} 
+        
+
+        var myNewChart = new Chart(ctx5).Bar(data,defaults);
+	}
+</script>
+	</div></div><br><br><div class="tab-container">
+	        <br> <br>  
+		<style>
+		.example24:before {
+		content:"Top 10 Staus";
+		margin: 40px 0px;
+		}
+		</style>
+		<div class="example24">
+		<div class="message"><table class="box-table-a" style="width: 35%;"  border=2 id='rounded-corner'>
+	                        <tr><th>Legend</th><th>Http Status</th><th>Name</th><th>Hits</th></tr><tr><td><span class="color_code" style="border-color:#5D8AA8; border-style: solid;"></span></td><td>200</td><td>OK</td><td class='mintd'>1</td></tr></table></div>
+	<style> 
+
+.wrapper1, .wrapper2, .wrapper3, .wrapper4, .wrapper5, .wrapper6, .wrapper7, .wrapper8
+{
+	width:461px;
+	height:380px;
+	background-color:#b9c9fe;
+	box-shadow: 10px 10px 5px #888888;
+	margin-left: 40%;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.legend_chart {
+    width: 19em;
+    display: block;
+    border: 1px solid black;
+	position: relative;
+	right: -140px;
+	color: black;
+	overflow: hidden;
+}
+
+.legend_chart .title_chart {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0em 0em 0em 1em;
+	padding: 0 1.3em;
+	height: 0.9em;
+    font-size:89%;
+	overflow: hidden;
+}
+.buttons_chart {
+	margin-left: -10px;
+	margin-top: 126px;
+	position:relative;
+	top:-60px;
+}
+</style>
+<script src="../../js/Chart.js"></script>
+
+
+</head>
+<body onload="pie1();pie2();pie3();pie4();pie5();pie6();">
+
+<div class="wrapper3">
+	
+	<canvas id="myChart3"  style="width: 400px; height: 400px;margin-top:25px;margin-left: 45px;"></canvas>
+	<div id="Legend3"></div>
+	<div class="buttons_chart" id="buttons3">
+		<button onclick="pie3()"><img src="../../images/chart.png" height="25px" width="25px"/></button>
+    	<button onclick="bar3()"><img src="../../images/chart_bar.png" height="25px" width="25px"/></button>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	var ctx3 = document.getElementById("myChart3").getContext("2d");
+	
+	var sites3 =['200']; 
+	var hits3 = [1];
+	var color3 = ['#5D8AA8','#E32636','#FFBF00','#8DB600','#FBCEB1','#7FFFD4','#98777B','#DE5D83','#FFEF00','#36454F'];
+
+	
+
+	function pie3() {
+		
+		var x= document.getElementById("myChart3");
+		x.setAttribute("width",320);
+		x.setAttribute("height",320);
+
+		document.getElementById('myChart3').style.marginLeft = '60px';
+		document.getElementById('buttons3').style.marginLeft = '474px';
+		document.getElementById('buttons3').style.marginTop = '20px';
+		
+
+		var data = [];
+        for (i = 0; i < 1; i++) {
+            var obj = {
+                label: sites3[i],
+                value : hits3[i],
+                color: color3[i],
+                title: sites3[i]
+            };
+            data.push(obj);
+        }
+
+		defaults = {
+			animation : false
+		}
+		var myNewChart3 = new Chart(ctx3).Pie(data,defaults);
+		
+		document.getElementById("Legend3").innerHTML = "";
+	    
+
+	}
+	
+ 	function bar3(){
+		var x= document.getElementById("myChart3");
+		x.setAttribute("width",400);
+		x.setAttribute("height",350);
+		
+		document.getElementById('myChart3').style.marginLeft = '0px';
+		document.getElementById('buttons3').style.marginLeft = '474px';
+		document.getElementById('buttons3').style.marginTop = '-18px';
+		
+		
+
+        var data = {
+            labels : [],
+            datasets : [
+            {
+                fillColor : [],
+                strokeColor : ["black"],
+                data : [],
+                title: []
+            }
+            ]
+        }
+
+        
+        for (i = 0; i < 1; i++) {
+            data.labels[i]=sites3[i];
+            data.datasets[0].data[i]=hits3[i];
+            data.datasets[0].fillColor[i]=color3[i];
+            data.datasets[0].title[i]=sites3[i];
+        }    
+
+        defaults = {
+			animation : false
+		} 
+        
+
+        var myNewChart = new Chart(ctx3).Bar(data,defaults);
+	}
+</script>
+	</div></div><br><br>

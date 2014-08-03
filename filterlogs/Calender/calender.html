@@ -1,0 +1,77 @@
+<html>
+    <head>
+    <link href="jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery-ui.min.js"></script>    
+		 
+    <style type="text/css">
+    	body
+		{
+    		font-family:Arial;
+    		font-size : 10pt;
+    		padding:0px;
+		}
+
+		.Highlight a{
+		   background-color : #00aba9 !important;
+		   background-image :none !important;
+		   color: White !important;
+		   font-weight:bold !important;
+		   font-size: 15px;
+		}
+        .nohighlight a{
+           background-color : #004050 !important;
+           background-image :none !important;
+           color: White !important;
+           font-weight:bold !important;
+           font-size: 15px;
+        }
+
+
+
+		.ui-datepicker{
+			font-size:15px;
+            width: 372px;
+            height: 240px;
+		}
+
+    </style>    
+    
+	<script>
+		$(document).ready(function() {
+        var disabledDays =['2014-2-3', '2014-2-4', '2014-2-5', '2014-3-6'];
+        var tips = ['some description1', 'some other description2'];
+        var hrefs =['../Report/2014-2-3/index.html', '../Report/2014-2-4/index.html', '../Report/2014-2-5/index.html', '../Report/2014-3-6/index.html'];
+$("#txtDate").datepicker({
+    dateFormat: 'yyyy-mm-dd',
+    beforeShowDay: function (date) {
+        var m = date.getMonth(),
+            d = date.getDate(),
+            y = date.getFullYear();
+        for (var i = 0; i < disabledDays.length; i++) {
+            if ($.inArray(y + '-' + (m + 1) + '-' + d, disabledDays) != -1) {
+                return [true, 'highlight', "Report"];
+            }
+            else{
+             return [true, 'nohighlight', "No Report"];   
+            }
+        }
+        return [true];
+    },
+    onSelect: function(dateText, inst) {        
+        var date = new Date(dateText.slice(4)),
+            m = date.getMonth(),
+            d = date.getDate(),
+            y = date.getFullYear();        
+        if ($.inArray(y + '-' + (m + 1) + '-' + d, disabledDays) != -1) {
+            window.parent.location = hrefs[disabledDays.indexOf((y + '-' + (m + 1) + '-' + d))];
+        }
+    }
+});
+		});
+	</script>
+    </head>
+    <body>
+		<div id='txtDate' /></div>
+    </body>
+</html>
